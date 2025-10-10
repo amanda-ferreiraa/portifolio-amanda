@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanda Portfólio</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">&lt;/&gt;</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#github">Github</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content">
+                <div class="text-section">
+                    <h1>AMANDA<br>FERREIRA</h1>
+                    <p class="subtitle">&lt;/desenvolvedora<br>full stack&gt;</p>
+                    <button class="portfolio-btn">portfólio</button>
+                    <div class="icons">
+                        <div class="icon phone-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="icon user-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-section">
+                    <div class="image-container">
+                        <img src="img/amanda.jpg" alt="Amanda Ferreira">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="wave-decoration"></div>
+    </main>
+
+    <!-- Seção de Projetos -->
+    <section id="projetos" class="projects-section">
+        <div class="container">
+            <div class="projects-header">
+                <h2>Meus Projetos</h2>
+                <p>Alguns dos projetos que desenvolvi</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card" onclick="goToProject('projeto1')">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
+                                <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-commerce Platform</h3>
+                        <p>Plataforma completa de e-commerce com React e Node.js</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="goToProject('projeto2')">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>Aplicativo de gerenciamento de tarefas com interface moderna</p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Express</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="goToProject('projeto3')">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Dashboard Analytics</h3>
+                        <p>Dashboard interativo para análise de dados em tempo real</p>
+                        <div class="project-tech">
+                            <span>Angular</span>
+                            <span>D3.js</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção GitHub -->
+    <section id="github" class="github-section">
+        <div class="github-bg-animation"></div>
+        <div class="container">
+            <div class="github-content">
+                <div class="github-header">
+                    <div class="github-icon-container">
+                        <svg class="github-main-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="code-particles">
+                            <span>&lt;/&gt;</span>
+                            <span>{ }</span>
+                            <span>[ ]</span>
+                            <span>( )</span>
+                        </div>
+                    </div>
+                    <h2>Meu GitHub</h2>
+                    <p>Explore meus repositórios e contribuições</p>
+                </div>
+
+                <div class="github-stats">
+                    <div class="github-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
+                            </div>
+                            <span class="terminal-title">amanda@github:~$</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">git status</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="git-text">On branch main</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="git-text">Your branch is up to date</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">git log --oneline</span>
+                            </div>
+                            <div class="commit-list">
+                                <div class="commit-item">
+                                    <span class="commit-hash">a1b2c3d</span>
+                                    <span class="commit-msg">✨ Add new portfolio features</span>
+                                </div>
+                                <div class="commit-item">
+                                    <span class="commit-hash">e4f5g6h</span>
+                                    <span class="commit-msg">🚀 Deploy React app</span>
+                                </div>
+                                <div class="commit-item">
+                                    <span class="commit-hash">i7j8k9l</span>
+                                    <span class="commit-msg">🎨 Update UI components</span>
+                                </div>
+                            </div>
+                            <div class="terminal-cursor">_</div>
+                        </div>
+                    </div>
+
+                    <div class="github-metrics">
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M16 10a4 4 0 0 1-8 0" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="metric-info">
+                                <h3>25+</h3>
+                                <p>Repositórios</p>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="metric-info">
+                                <h3>150+</h3>
+                                <p>Stars</p>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="metric-info">
+                                <h3>500+</h3>
+                                <p>Commits</p>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 11H1l8-8 8 8h-8l8 8-8-8z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="metric-info">
+                                <h3>50+</h3>
+                                <p>Pull Requests</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="github-cta">
+                    <a href="https://github.com/amanda-ferreira" target="_blank" class="github-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Visitar GitHub
+                        <div class="btn-shine"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="contact-section">
+        <div class="contact-bg-elements">
+            <div class="floating-envelope"></div>
+            <div class="message-bubbles">
+                <div class="bubble bubble-1">👋</div>
+                <div class="bubble bubble-2">💬</div>
+                <div class="bubble bubble-3">📧</div>
+                <div class="bubble bubble-4">🚀</div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-header">
+                    <div class="contact-icon-animation">
+                        <svg class="main-contact-icon" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <div class="signal-waves">
+                            <div class="wave wave-1"></div>
+                            <div class="wave wave-2"></div>
+                            <div class="wave wave-3"></div>
+                        </div>
+                    </div>
+                    <h2>Vamos Conversar?</h2>
+                    <p>Estou sempre aberta para discutir novos projetos, oportunidades criativas ou simplesmente bater um papo sobre tecnologia!</p>
+                </div>
+
+                <div class="contact-methods">
+                    <div class="contact-card email-card">
+                        <div class="card-glow"></div>
+                        <div class="contact-method-header">
+                            <div class="method-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M16 8v5a3 3 0 0 0 6 0v-5a10 10 0 1 0-3.92 7.94" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h3>Email</h3>
+                        </div>
+                        <p class="method-description">Respondo em até 24h</p>
+                        <a href="mailto:amanda@exemplo.com" class="contact-link">
+                            <span>amanda@exemplo.com</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="7" y1="17" x2="17" y2="7" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="7,7 17,7 17,17" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="contact-card linkedin-card">
+                        <div class="card-glow"></div>
+                        <div class="contact-method-header">
+                            <div class="method-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h3>LinkedIn</h3>
+                        </div>
+                        <p class="method-description">Conecte-se comigo</p>
+                        <a href="https://linkedin.com/in/amanda-ferreira" target="_blank" class="contact-link">
+                            <span>/in/amanda-ferreira</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="7" y1="17" x2="17" y2="7" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="7,7 17,7 17,17" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="contact-card whatsapp-card">
+                        <div class="card-glow"></div>
+                        <div class="contact-method-header">
+                            <div class="method-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h3>WhatsApp</h3>
+                        </div>
+                        <p class="method-description">Mensagem direta</p>
+                        <a href="https://wa.me/5511999999999" target="_blank" class="contact-link">
+                            <span>+55 11 99999-9999</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="7" y1="17" x2="17" y2="7" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="7,7 17,7 17,17" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <div class="form-container">
+                        <h3>Ou envie uma mensagem rápida</h3>
+                        <form class="creative-form" id="contactForm">
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <input type="text" id="name" name="name" required>
+                                    <label for="name">Seu nome</label>
+                                    <div class="input-highlight"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <input type="email" id="email" name="email" required>
+                                    <label for="email">Seu email</label>
+                                    <div class="input-highlight"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <textarea id="message" name="message" rows="4" required></textarea>
+                                    <label for="message">Sua mensagem</label>
+                                    <div class="input-highlight"></div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="send-btn">
+                                <span class="btn-text">Enviar Mensagem</span>
+                                <div class="btn-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2"/>
+                                        <polygon points="22,2 15,22 11,13 2,9 22,2" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="btn-ripple"></div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
