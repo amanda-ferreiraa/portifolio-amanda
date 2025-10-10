@@ -6,10 +6,32 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #020203 50%, #732193 100%);
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     color: white;
     min-height: 100vh;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* ===== ANIMAÇÕES GLOBAIS ===== */
+@keyframes glow-pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        opacity: 1;
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(139, 92, 246, 0.8);
+        opacity: 0.8;
+    }
+}
+
+@keyframes float-bg {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg); 
+    }
+    50% { 
+        transform: scale(1.1) rotate(5deg); 
+    }
 }
 
 /* Header */
@@ -149,31 +171,31 @@ main {
     left: 2px;
     right: 2px;
     bottom: 2px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d1b3d 50%, #4a1f5a 100%);
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     border-radius: 33px;
     z-index: -1;
 }
 
 .portfolio-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
     color: white;
 }
 
 .portfolio-btn:hover::before {
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
     animation: pulse-border 2s infinite;
 }
 
 @keyframes pulse-border {
     0% {
-        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
     }
     70% {
-        box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
     }
 }
 
@@ -185,15 +207,15 @@ main {
 .icon {
     width: 70px;
     height: 70px;
-    border: 3px solid #8b5cf6;
+    border: 3px solid #3b82f6;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: #8b5cf6;
-    background: rgba(139, 92, 246, 0.1);
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
 }
 
 .icon svg {
@@ -204,11 +226,11 @@ main {
 }
 
 .icon:hover {
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
-    border-color: #ec4899;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-color: #8b5cf6;
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
 }
 
 .icon:hover svg {
@@ -366,12 +388,25 @@ main {
     z-index: -1;
 }
 
-/* Seção de Projetos */
+/* ===== SEÇÃO DE PROJETOS ===== */
 .projects-section {
     min-height: 100vh;
-    background: linear-gradient(180deg, #1a1a1a 0%, #2d1b3d 50%, #4a1f5a 100%);
-    padding: 100px 0;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 120px 0;
     position: relative;
+    overflow: hidden;
+}
+
+.projects-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+    animation: float-bg 20s ease-in-out infinite;
 }
 
 .projects-header {
@@ -383,15 +418,31 @@ main {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #ffffff, #c084fc);
+    background: linear-gradient(135deg, #ffffff, #8b5cf6, #ec4899);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+    position: relative;
+}
+
+.projects-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    animation: glow-pulse 2s ease-in-out infinite;
 }
 
 .projects-header p {
     font-size: 1.5rem;
-    color: #c084fc;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 300;
 }
 
@@ -405,15 +456,16 @@ main {
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(15, 15, 35, 0.8);
     border-radius: 20px;
     padding: 30px;
     cursor: pointer;
     transition: all 0.4s ease;
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    backdrop-filter: blur(15px);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .project-card::before {
@@ -435,13 +487,14 @@ main {
 
 .project-card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 25px 50px rgba(139, 92, 246, 0.3);
-    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 25px 60px rgba(59, 130, 246, 0.4);
+    border-color: rgba(59, 130, 246, 0.6);
+    background: rgba(26, 26, 46, 0.9);
 }
 
 .project-image {
     height: 200px;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
     border-radius: 15px;
     margin-bottom: 25px;
     display: flex;
@@ -452,14 +505,17 @@ main {
 }
 
 .project-placeholder {
-    color: #c084fc;
+    color: rgba(255, 255, 255, 0.8);
     opacity: 0.7;
     transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .project-card:hover .project-placeholder {
     opacity: 1;
     transform: scale(1.1);
+    color: #8b5cf6;
 }
 
 .project-content h3 {
@@ -470,7 +526,7 @@ main {
 }
 
 .project-content p {
-    color: #c084fc;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -483,20 +539,20 @@ main {
 }
 
 .project-tech span {
-    background: rgba(139, 92, 246, 0.2);
-    color: #c084fc;
+    background: rgba(59, 130, 246, 0.2);
+    color: rgba(255, 255, 255, 0.9);
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(59, 130, 246, 0.3);
     transition: all 0.3s ease;
 }
 
 .project-card:hover .project-tech span {
-    background: rgba(139, 92, 246, 0.3);
+    background: rgba(59, 130, 246, 0.4);
     color: white;
-    border-color: rgba(139, 92, 246, 0.5);
+    border-color: rgba(59, 130, 246, 0.6);
 }
 
 /* Responsive para projetos */
@@ -543,12 +599,12 @@ main {
     }
 }
 
-/* Seção GitHub - Design Criativo */
+/* ===== SEÇÃO GITHUB ===== */
 .github-section {
     min-height: 100vh;
-    background: #0d1117;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     position: relative;
-    padding: 100px 0;
+    padding: 120px 0;
     overflow: hidden;
 }
 
@@ -558,8 +614,8 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+    background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 40% 70%, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
     animation: float-bg 20s ease-in-out infinite;
 }
@@ -587,14 +643,14 @@ main {
 }
 
 .github-main-icon {
-    color: #58a6ff;
-    filter: drop-shadow(0 0 20px rgba(88, 166, 255, 0.5));
+    color: #3b82f6;
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6));
     animation: pulse-github 3s ease-in-out infinite;
 }
 
 @keyframes pulse-github {
-    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(88, 166, 255, 0.5)); }
-    50% { transform: scale(1.1); filter: drop-shadow(0 0 30px rgba(88, 166, 255, 0.8)); }
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6)); }
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.9)); }
 }
 
 .code-particles {
@@ -646,14 +702,32 @@ main {
 .github-header h2 {
     font-size: 4rem;
     font-weight: 700;
-    color: #f0f6fc;
+    background: linear-gradient(135deg, #ffffff, #3b82f6, #8b5cf6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
-    text-shadow: 0 0 30px rgba(88, 166, 255, 0.3);
+    text-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+    position: relative;
+}
+
+.github-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    animation: glow-pulse 2s ease-in-out infinite;
 }
 
 .github-header p {
     font-size: 1.5rem;
-    color: #7d8590;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 300;
 }
 
@@ -668,20 +742,21 @@ main {
 
 /* Terminal GitHub */
 .github-terminal {
-    background: #161b22;
+    background: rgba(15, 15, 35, 0.9);
     border-radius: 15px;
-    border: 1px solid #30363d;
+    border: 1px solid rgba(59, 130, 246, 0.3);
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
 }
 
 .terminal-header {
-    background: #21262d;
+    background: rgba(26, 26, 46, 0.9);
     padding: 15px 20px;
     display: flex;
     align-items: center;
     gap: 15px;
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .terminal-controls {
@@ -768,43 +843,45 @@ main {
 }
 
 .metric-card {
-    background: linear-gradient(135deg, rgba(88, 166, 255, 0.1), rgba(34, 197, 94, 0.1));
-    border: 1px solid rgba(88, 166, 255, 0.2);
+    background: rgba(15, 15, 35, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.3);
     border-radius: 15px;
     padding: 25px;
     display: flex;
     align-items: center;
     gap: 20px;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .metric-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(88, 166, 255, 0.4);
-    box-shadow: 0 15px 30px rgba(88, 166, 255, 0.2);
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+    background: rgba(26, 26, 46, 0.9);
 }
 
 .metric-icon {
-    color: #58a6ff;
+    color: #3b82f6;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: rgba(88, 166, 255, 0.1);
+    background: rgba(59, 130, 246, 0.2);
     border-radius: 10px;
 }
 
 .metric-info h3 {
     font-size: 2rem;
     font-weight: 700;
-    color: #f0f6fc;
+    color: #ffffff;
     margin-bottom: 5px;
 }
 
 .metric-info p {
-    color: #8b949e;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
 }
 
@@ -817,7 +894,7 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: linear-gradient(135deg, #238636, #2ea043);
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
     color: white;
     padding: 18px 35px;
     border-radius: 30px;
@@ -828,13 +905,13 @@ main {
     position: relative;
     overflow: hidden;
     border: 2px solid transparent;
-    box-shadow: 0 10px 25px rgba(35, 134, 54, 0.3);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
 }
 
 .github-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(35, 134, 54, 0.4);
-    border-color: rgba(46, 160, 67, 0.5);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.5);
+    border-color: rgba(139, 92, 246, 0.5);
 }
 
 .btn-shine {
@@ -903,12 +980,12 @@ main {
     }
 }
 
-/* Seção Contato - Design Super Criativo */
+/* ===== SEÇÃO CONTATO ===== */
 .contact-section {
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     position: relative;
-    padding: 100px 0;
+    padding: 120px 0;
     overflow: hidden;
 }
 
@@ -927,9 +1004,10 @@ main {
     right: 10%;
     width: 60px;
     height: 40px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(59, 130, 246, 0.3);
     border-radius: 8px;
     animation: float-envelope 6s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
 }
 
 .floating-envelope::after {
@@ -939,9 +1017,9 @@ main {
     left: -3px;
     right: -3px;
     height: 20px;
-    border-left: 30px solid rgba(255, 255, 255, 0.2);
-    border-right: 30px solid rgba(255, 255, 255, 0.2);
-    border-top: 20px solid rgba(255, 255, 255, 0.2);
+    border-left: 30px solid rgba(59, 130, 246, 0.3);
+    border-right: 30px solid rgba(59, 130, 246, 0.3);
+    border-top: 20px solid rgba(59, 130, 246, 0.3);
 }
 
 @keyframes float-envelope {
@@ -959,7 +1037,7 @@ main {
     position: absolute;
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(59, 130, 246, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1020,19 +1098,19 @@ main {
 }
 
 .main-contact-icon {
-    color: white;
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+    color: #3b82f6;
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6));
     animation: pulse-contact 3s ease-in-out infinite;
 }
 
 @keyframes pulse-contact {
     0%, 100% {
         transform: scale(1);
-        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+        filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6));
     }
     50% {
         transform: scale(1.1);
-        filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.8));
+        filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.9));
     }
 }
 
@@ -1045,7 +1123,7 @@ main {
 
 .wave {
     position: absolute;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(59, 130, 246, 0.4);
     border-radius: 50%;
     animation: wave-expand 2s ease-out infinite;
 }
@@ -1085,9 +1163,27 @@ main {
 .contact-header h2 {
     font-size: 4rem;
     font-weight: 700;
-    color: white;
+    background: linear-gradient(135deg, #ffffff, #3b82f6, #8b5cf6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+    position: relative;
+}
+
+.contact-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    animation: glow-pulse 2s ease-in-out infinite;
 }
 
 .contact-header p {
@@ -1110,14 +1206,15 @@ main {
 }
 
 .contact-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 15, 35, 0.8);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.3);
     border-radius: 20px;
     padding: 30px;
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .contact-card::before {
@@ -1127,7 +1224,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -1138,8 +1235,9 @@ main {
 
 .contact-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 25px 50px rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.5);
+    background: rgba(26, 26, 46, 0.9);
 }
 
 .card-glow {
@@ -1175,12 +1273,12 @@ main {
 .method-icon {
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(59, 130, 246, 0.2);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #3b82f6;
 }
 
 .contact-method-header h3 {
@@ -1206,7 +1304,7 @@ main {
 }
 
 .contact-link:hover {
-    color: #4ecdc4;
+    color: #8b5cf6;
     transform: translateX(5px);
 }
 
@@ -1218,9 +1316,9 @@ main {
 }
 
 .form-container {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 15, 35, 0.8);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.3);
     border-radius: 25px;
     padding: 40px;
 }
