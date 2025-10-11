@@ -231,4 +231,155 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Formulário de contato
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
+    const btnLoader = document.getElementById('btnLoader');
+    const formStatus = document.getElementById('formStatus');
+    const submitBtn = contactForm?.querySelector('.submit-btn');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Mostrar loading
+            btnLoader.classList.add('active');
+            submitBtn.disabled = true;
+            formStatus.style.display = 'none';
+            
+            // Simular envio do formulário (aqui você integraria com um serviço real)
+            try {
+                // Simular delay de envio
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Coletar dados do formulário
+                const formData = new FormData(contactForm);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message')
+                };
+                
+                console.log('Dados do formulário:', data);
+                
+                // Simular sucesso (aqui você faria a requisição real)
+                showFormStatus('success', 'Message sent successfully! I\'ll get back to you soon.');
+                contactForm.reset();
+                
+                // Aqui você integraria com um serviço como:
+                // - EmailJS
+                // - Netlify Forms
+                // - Seu próprio backend
+                // - Serviço de email como SendGrid
+                
+            } catch (error) {
+                console.error('Erro ao enviar formulário:', error);
+                showFormStatus('error', 'Something went wrong. Please try again or contact me directly via email.');
+            } finally {
+                // Esconder loading
+                btnLoader.classList.remove('active');
+                submitBtn.disabled = false;
+            }
+        });
+    }
+    
+    function showFormStatus(type, message) {
+        formStatus.className = `form-status ${type}`;
+        formStatus.textContent = message;
+        formStatus.style.display = 'block';
+        
+        // Auto hide after 5 seconds
+        setTimeout(() => {
+            formStatus.style.display = 'none';
+        }, 5000);
+    }
+    
+    // Efeito nos inputs do formulário
+    const inputs = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+            if (!this.value) {
+                this.parentElement.classList.remove('focused');
+            }
+        });
+    });
+});
+
+// Smooth scroll para "Back to Top"
+document.addEventListener('DOMContentLoaded', () => {
+    const backToTopLink = document.querySelector('a[href="#home"]');
+    if (backToTopLink) {
+        backToTopLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// Animação dos ícones sociais
+document.addEventListener('DOMContentLoaded', () => {
+    const socialLinks = document.querySelectorAll('.social-link');
+    socialLinks.forEach((link, index) => {
+        link.style.animationDelay = `${index * 0.1}s`;
+        link.classList.add('animate-in');
+    });
+});
+
+// Observer para animar a seção de contato
+const contactObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const contactMethods = entry.target.querySelectorAll('.contact-method');
+            contactMethods.forEach((method, index) => {
+                setTimeout(() => {
+                    method.style.opacity = '1';
+                    method.style.transform = 'translateX(0)';
+                }, index * 200);
+            });
+            
+            const socialLinks = entry.target.querySelectorAll('.social-link');
+            socialLinks.forEach((link, index) => {
+                setTimeout(() => {
+                    link.style.opacity = '1';
+                    link.style.transform = 'translateY(0)';
+                }, 600 + (index * 100));
+            });
+            
+            contactObserver.unobserve(entry.target);
+        }
+    });
+});
+
+// Observar a seção de contato para animações
+document.addEventListener('DOMContentLoaded', () => {
+    const contactSection = document.querySelector('.contact-section');
+    if (contactSection) {
+        // Preparar elementos para animação
+        const contactMethods = contactSection.querySelectorAll('.contact-method');
+        const socialLinks = contactSection.querySelectorAll('.social-link');
+        
+        contactMethods.forEach(method => {
+            method.style.opacity = '0';
+            method.style.transform = 'translateX(-20px)';
+            method.style.transition = 'all 0.6s ease';
+        });
+        
+        socialLinks.forEach(link => {
+            link.style.opacity = '0';
+            link.style.transform = 'translateY(20px)';
+            link.style.transition = 'all 0.6s ease';
+        });
+        
+        contactObserver.observe(contactSection);
+    }
+});
+
 console.log('Portfólio da Amanda Ferreira carregado com sucesso!');
