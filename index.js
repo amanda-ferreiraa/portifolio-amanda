@@ -23,26 +23,135 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Animação das setas de navegação
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
+// Sistema de alternância de imagens do perfil
+const profileImages = [
+    'img/Amanda.JPG',
+    'img/Amanda1.jpeg',
+    'img/Amanda2.jpeg'
+];
+
+let currentImageIndex = 0;
+
+// Animação das setas de navegação com alternância de imagens
+const leftArrow = document.querySelector('.arrow-left');
+const rightArrow = document.querySelector('.arrow-right');
 const profileImg = document.querySelector('.profile-img');
 
-if (leftArrow && rightArrow && profileImg) {
-    leftArrow.addEventListener('click', () => {
-        profileImg.style.transform = 'scale(0.95)';
+function changeProfileImage(direction) {
+    if (!profileImg) return;
+    
+    // Animação de saída
+    profileImg.style.transform = 'scale(0.8)';
+    profileImg.style.opacity = '0.3';
+    
+    setTimeout(() => {
+        // Alterar índice da imagem
+        if (direction === 'next') {
+            currentImageIndex = (currentImageIndex + 1) % profileImages.length;
+        } else {
+            currentImageIndex = (currentImageIndex - 1 + profileImages.length) % profileImages.length;
+        }
+        
+        // Trocar a imagem
+        profileImg.src = profileImages[currentImageIndex];
+        
+        // Atualizar indicadores
+        updateIndicators();
+        
+        // Animação de entrada
         setTimeout(() => {
             profileImg.style.transform = 'scale(1)';
-        }, 200);
+            profileImg.style.opacity = '1';
+        }, 100);
+        
+    }, 200);
+}
+
+if (leftArrow && rightArrow && profileImg) {
+    // Seta esquerda - imagem anterior
+    leftArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        changeProfileImage('prev');
+        
+        // Efeito visual no botão
+        leftArrow.style.transform = 'translateY(-50%) scale(0.9)';
+        setTimeout(() => {
+            leftArrow.style.transform = 'translateY(-50%) scale(1)';
+        }, 150);
     });
     
-    rightArrow.addEventListener('click', () => {
-        profileImg.style.transform = 'scale(1.05)';
+    // Seta direita - próxima imagem
+    rightArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        changeProfileImage('next');
+        
+        // Efeito visual no botão
+        rightArrow.style.transform = 'translateY(-50%) scale(0.9)';
         setTimeout(() => {
-            profileImg.style.transform = 'scale(1)';
-        }, 200);
+            rightArrow.style.transform = 'translateY(-50%) scale(1)';
+        }, 150);
+    });
+    
+    // Adicionar transições suaves à imagem
+    profileImg.style.transition = 'all 0.3s ease';
+}
+
+// Funcionalidade dos indicadores de imagem
+function updateIndicators() {
+    const indicators = document.querySelectorAll('.indicator');
+    indicators.forEach((indicator, index) => {
+        if (index === currentImageIndex) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
     });
 }
+
+function goToImage(index) {
+    if (!profileImg || index === currentImageIndex) return;
+    
+    // Animação de saída
+    profileImg.style.transform = 'scale(0.8)';
+    profileImg.style.opacity = '0.3';
+    
+    setTimeout(() => {
+        // Alterar índice da imagem
+        currentImageIndex = index;
+        
+        // Trocar a imagem
+        profileImg.src = profileImages[currentImageIndex];
+        
+        // Atualizar indicadores
+        updateIndicators();
+        
+        // Animação de entrada
+        setTimeout(() => {
+            profileImg.style.transform = 'scale(1)';
+            profileImg.style.opacity = '1';
+        }, 100);
+        
+    }, 200);
+}
+
+// Adicionar event listeners aos indicadores
+document.addEventListener('DOMContentLoaded', () => {
+    const indicators = document.querySelectorAll('.indicator');
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            goToImage(index);
+            
+            // Efeito visual no indicador
+            indicator.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                indicator.style.transform = indicator.classList.contains('active') ? 'scale(1.3)' : 'scale(1)';
+            }, 150);
+        });
+    });
+    
+    // Inicializar indicadores
+    updateIndicators();
+});
 
 // Efeito de hover nos botões
 const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
