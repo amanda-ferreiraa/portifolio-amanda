@@ -18,6 +18,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Github</a></li>
                 <li><a href="#contacts">Contacts</a></li>
             </ul>
         </nav>
@@ -151,13 +152,242 @@
         </div>
     </section>
 
-    <!-- Projects Section Header -->
-    <section class="projects-header">
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
         <div class="container">
-            <h2 class="projects-title">Projects</h2>
+            <div class="projects-header">
+                <h2 class="projects-title">Projects</h2>
+                <p class="projects-subtitle">Explore my latest work and creative solutions</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" onclick="openProject('project1')">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="4" width="18" height="15" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M7 9L12 14L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">
+                            Modern e-commerce solution with real-time inventory management, 
+                            secure payment integration, and responsive design.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" onclick="openProject('project2')">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M8 6H16M8 10H16M8 14H13" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>TypeScript</span>
+                        </div>
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">
+                            Cross-platform mobile application for team collaboration 
+                            with real-time synchronization and offline capabilities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" onclick="openProject('project3')">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Python</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <h3 class="project-title">Data Analytics Dashboard</h3>
+                        <p class="project-description">
+                            Interactive dashboard for business intelligence with 
+                            real-time data visualization and advanced filtering options.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <script src="index.js"></script>
+    <!-- GitHub Section -->
+    <section class="github-section" id="skills">
+        <div class="container">
+            <div class="github-header">
+                <h2 class="github-title">GitHub Activity</h2>
+                <p class="github-subtitle">Code, commits, and continuous learning</p>
+            </div>
+            
+            <div class="github-content">
+                <!-- GitHub Stats Card -->
+                <div class="github-stats">
+                    <div class="stats-card">
+                        <div class="card-header">
+                            <div class="github-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="card-title">
+                                <h3>@amanda-ferreiraa</h3>
+                                <span class="profile-link">github.com/amanda-ferreiraa</span>
+                            </div>
+                        </div>
+                        
+                        <div class="github-metrics">
+                            <div class="metric-item">
+                                <div class="metric-number">2.5K</div>
+                                <div class="metric-label">Contributions</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">47</div>
+                                <div class="metric-label">Repositories</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">1.2K</div>
+                                <div class="metric-label">Commits</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">156</div>
+                                <div class="metric-label">Stars</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contribution Graph -->
+                <div class="contribution-section">
+                    <h3 class="contribution-title">Contribution Graph</h3>
+                    <div class="contribution-graph">
+                        <div class="graph-legend">
+                            <span>Less</span>
+                            <div class="legend-squares">
+                                <div class="square level-0"></div>
+                                <div class="square level-1"></div>
+                                <div class="square level-2"></div>
+                                <div class="square level-3"></div>
+                                <div class="square level-4"></div>
+                            </div>
+                            <span>More</span>
+                        </div>
+                        <div class="graph-grid" id="contributionGrid">
+                            <!-- Grid será gerado via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Top Repositories -->
+                <div class="top-repos">
+                    <h3 class="repos-title">Featured Repositories</h3>
+                    <div class="repos-grid">
+                        <div class="repo-card">
+                            <div class="repo-header">
+                                <div class="repo-name">portfolio-website</div>
+                                <div class="repo-visibility">Public</div>
+                            </div>
+                            <p class="repo-description">Modern portfolio website built with HTML, CSS, and JavaScript featuring responsive design and smooth animations.</p>
+                            <div class="repo-footer">
+                                <div class="repo-language">
+                                    <div class="language-dot html"></div>
+                                    <span>HTML</span>
+                                </div>
+                                <div class="repo-stats">
+                                    <span class="stars">⭐ 24</span>
+                                    <span class="forks">🍴 8</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="repo-card">
+                            <div class="repo-header">
+                                <div class="repo-name">react-ecommerce</div>
+                                <div class="repo-visibility">Public</div>
+                            </div>
+                            <p class="repo-description">Full-stack e-commerce application with React frontend, Node.js backend, and MongoDB database.</p>
+                            <div class="repo-footer">
+                                <div class="repo-language">
+                                    <div class="language-dot react"></div>
+                                    <span>React</span>
+                                </div>
+                                <div class="repo-stats">
+                                    <span class="stars">⭐ 45</span>
+                                    <span class="forks">🍴 12</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="repo-card">
+                            <div class="repo-header">
+                                <div class="repo-name">task-manager-app</div>
+                                <div class="repo-visibility">Public</div>
+                            </div>
+                            <p class="repo-description">Cross-platform task management mobile app built with React Native and Firebase backend.</p>
+                            <div class="repo-footer">
+                                <div class="repo-language">
+                                    <div class="language-dot javascript"></div>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="repo-stats">
+                                    <span class="stars">⭐ 31</span>
+                                    <span class="forks">🍴 6</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GitHub CTA -->
+                <div class="github-cta">
+                    <h3>Let's collaborate on GitHub</h3>
+                    <p>Follow me for updates on my latest projects and contributions</p>
+                    <a href="https://github.com/amanda-ferreiraa" target="_blank" class="github-btn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
+                        </svg>
+                        Visit My GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="index.js"></script></script>
 </body>
 </html>

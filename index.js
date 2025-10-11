@@ -109,4 +109,126 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Função para abrir projetos
+function openProject(projectId) {
+    // Por enquanto, mostra um alert. Depois será implementada a navegação
+    const projectNames = {
+        'project1': 'E-Commerce Platform',
+        'project2': 'Task Management App',
+        'project3': 'Data Analytics Dashboard'
+    };
+    
+    const projectName = projectNames[projectId];
+    alert(`Redirecionando para: ${projectName}\n\nEsta funcionalidade será implementada em breve!`);
+    
+    // Futura implementação:
+    // window.location.href = `project.html?id=${projectId}`;
+    // ou
+    // window.open(`projects/${projectId}.html`, '_blank');
+}
+
+// Efeito adicional nos cards de projeto
+document.addEventListener('DOMContentLoaded', () => {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+});
+
+// Geração do gráfico de contribuições do GitHub
+function generateContributionGraph() {
+    const grid = document.getElementById('contributionGrid');
+    if (!grid) return;
+    
+    // Gerar 371 dias (53 semanas x 7 dias)
+    for (let i = 0; i < 371; i++) {
+        const day = document.createElement('div');
+        day.className = 'contribution-day';
+        
+        // Gerar níveis de contribuição aleatórios (mais realistas)
+        const random = Math.random();
+        let level;
+        
+        if (random < 0.3) level = 0;
+        else if (random < 0.6) level = 1;
+        else if (random < 0.8) level = 2;
+        else if (random < 0.95) level = 3;
+        else level = 4;
+        
+        day.classList.add(`level-${level}`);
+        
+        // Adicionar tooltip com data
+        const date = new Date();
+        date.setDate(date.getDate() - (371 - i));
+        const dateString = date.toLocaleDateString('pt-BR');
+        const contributions = level === 0 ? 0 : Math.floor(Math.random() * 10) + 1;
+        
+        day.title = `${dateString}: ${contributions} contribution${contributions !== 1 ? 's' : ''}`;
+        
+        grid.appendChild(day);
+    }
+}
+
+// Animação dos números das métricas do GitHub
+function animateGitHubMetrics() {
+    const metrics = [
+        { element: '.github-metrics .metric-number', values: ['2.5K', '47', '1.2K', '156'] }
+    ];
+    
+    const metricElements = document.querySelectorAll('.github-metrics .metric-number');
+    const targetValues = ['2.5K', '47', '1.2K', '156'];
+    
+    metricElements.forEach((element, index) => {
+        const targetValue = targetValues[index];
+        let currentValue = 0;
+        const isKValue = targetValue.includes('K');
+        const numericTarget = isKValue ? 
+            parseFloat(targetValue.replace('K', '')) * 1000 : 
+            parseInt(targetValue);
+        
+        const increment = numericTarget / 60;
+        
+        const timer = setInterval(() => {
+            currentValue += increment;
+            
+            if (currentValue >= numericTarget) {
+                element.textContent = targetValue;
+                clearInterval(timer);
+            } else {
+                if (isKValue) {
+                    element.textContent = (currentValue / 1000).toFixed(1) + 'K';
+                } else {
+                    element.textContent = Math.floor(currentValue);
+                }
+            }
+        }, 50);
+    });
+}
+
+// Observer para animar quando a seção GitHub ficar visível
+const githubObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            generateContributionGraph();
+            setTimeout(animateGitHubMetrics, 500);
+            githubObserver.unobserve(entry.target);
+        }
+    });
+});
+
+// Observar a seção GitHub
+document.addEventListener('DOMContentLoaded', () => {
+    const githubSection = document.querySelector('.github-section');
+    if (githubSection) {
+        githubObserver.observe(githubSection);
+    }
+});
+
 console.log('Portfólio da Amanda Ferreira carregado com sucesso!');
