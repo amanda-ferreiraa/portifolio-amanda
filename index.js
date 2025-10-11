@@ -222,9 +222,9 @@ window.addEventListener('scroll', () => {
 function openProject(projectId) {
     // Por enquanto, mostra um alert. Depois será implementada a navegação
     const projectNames = {
-        'project1': 'E-Commerce Platform',
-        'project2': 'Task Management App',
-        'project3': 'Data Analytics Dashboard'
+        'project1': 'Medcenter',
+        'project2': 'Fatura +',
+        'project3': 'Loja de Roupas',
     };
     
     const projectName = projectNames[projectId];
@@ -501,10 +501,10 @@ const translations = {
         skillsTitle: 'Skills & Technologies',
         // About Section
         aboutTitle: 'About me',
-        aboutDescription: 'I started my software journey from photography. Through that, I learned to love the process of creating from scratch. Since then, this has led me to software development as it fulfills my love for learning and building things.',
+        aboutDescription: 'I started my software journey from curio. Through that, I learned to love the process of creating from scratch. Since then, this has led me to software development as it fulfills my love for learning and building things.',
         completedProjects: 'Completed<br>Projects',
         clientSatisfaction: 'Client<br>satisfaction',
-        yearsExperience: 'Years of<br>experience',
+        yearsExperience: 'Commits',
         // Projects
         projectsTitle: 'Projects',
         projectsSubtitle: 'Explore my latest work and creative solutions',
@@ -520,10 +520,10 @@ const translations = {
         skillsTitle: 'Habilidades & Tecnologias',
         // About Section
         aboutTitle: 'Sobre mim',
-        aboutDescription: 'Comecei minha jornada no desenvolvimento de software através da fotografia. Com isso, aprendi a amar o processo de criar do zero. Desde então, isso me levou ao desenvolvimento de software, pois satisfaz meu amor por aprender e construir coisas.',
+        aboutDescription: 'Comecei minha jornada no desenvolvimento de software através da curiosidade. Com isso, aprendi a amar o processo de criar do zero. Desde então, isso me levou ao desenvolvimento de software, pois satisfaz meu amor por aprender e construir coisas.',
         completedProjects: 'Projetos<br>Concluídos',
         clientSatisfaction: 'Satisfação do<br>Cliente',
-        yearsExperience: 'Anos de<br>Experiência',
+        yearsExperience: 'Commits',
         // Projects
         projectsTitle: 'Projetos',
         projectsSubtitle: 'Explore meus trabalhos mais recentes e soluções criativas',
