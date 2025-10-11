@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCenter Platform - Amanda Ferreira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="../index.html" class="back-btn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span data-en="Back to Portfolio" data-pt="Voltar ao Portfólio">Back to Portfolio</span>
+                </a>
+            </div>
+            
+            <div class="nav-actions">
+                <button id="languageBtn" class="lang-btn" onclick="toggleLanguage()">
+                    <span class="lang-flag">🇺🇸</span>
+                    <span class="lang-text">EN</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="project-badge">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2V22M2 12H22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span data-en="Medical Platform" data-pt="Plataforma Médica">Medical Platform</span>
+                </div>
+                
+                <h1 class="project-title" data-en="MedCenter Platform" data-pt="Plataforma MedCenter">MedCenter Platform</h1>
+                
+                <p class="project-subtitle" data-en="Complete web application for optimizing medical appointment management in clinics and hospitals" data-pt="Aplicação web completa para otimizar a gestão de atendimentos médicos em clínicas e hospitais">
+                    Complete web application for optimizing medical appointment management in clinics and hospitals
+                </p>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Spring Boot</span>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="project-mockup">
+                    <div class="mockup-screen">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="mockup-url">medcenter.com</div>
+                        </div>
+                        <div class="mockup-content">
+                            <div class="dashboard-preview">
+                                <div class="dashboard-sidebar">
+                                    <div class="nav-item active"></div>
+                                    <div class="nav-item"></div>
+                                    <div class="nav-item"></div>
+                                    <div class="nav-item"></div>
+                                </div>
+                                <div class="dashboard-main">
+                                    <div class="dashboard-cards">
+                                        <div class="mini-card"></div>
+                                        <div class="mini-card"></div>
+                                        <div class="mini-card"></div>
+                                    </div>
+                                    <div class="dashboard-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="overview-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Project Overview" data-pt="Visão Geral do Projeto">Project Overview</h2>
+                <p data-en="Comprehensive solution for medical appointment management" data-pt="Solução abrangente para gestão de atendimentos médicos">Comprehensive solution for medical appointment management</p>
+            </div>
+            
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 4H18C19.1 4 20 4.9 20 6V20C20 21.1 19.1 22 18 22H6C4.9 22 4 21.1 4 20V6C4 4.9 4.9 4 6 4H8M16 4V2C16 0.9 15.1 0 14 0H10C8.9 0 8 0.9 8 2V4M16 4H8" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 12H16M8 16H12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Appointment Management" data-pt="Gestão de Consultas">Appointment Management</h3>
+                    <p data-en="Complete system for scheduling, tracking and managing medical appointments with real-time updates" data-pt="Sistema completo para agendamento, acompanhamento e gestão de consultas médicas com atualizações em tempo real">Complete system for scheduling, tracking and managing medical appointments with real-time updates</p>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3V21H21V3H3ZM9 17H7V15H9V17ZM9 13H7V11H9V13ZM9 9H7V7H9V9ZM13 17H11V15H13V17ZM13 13H11V11H13V13ZM13 9H11V7H13V9ZM17 17H15V15H17V17ZM17 13H15V11H17V13ZM17 9H15V7H17V9Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Management Reports" data-pt="Relatórios Gerenciais">Management Reports</h3>
+                    <p data-en="Detailed analytics and reports for healthcare professionals to monitor their daily and weekly activities" data-pt="Análises detalhadas e relatórios para profissionais de saúde monitorarem suas atividades diárias e semanais">Detailed analytics and reports for healthcare professionals to monitor their daily and weekly activities</p>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Institutional Website" data-pt="Site Institucional">Institutional Website</h3>
+                    <p data-en="Public-facing website with clinic information, services, and online appointment booking for patients" data-pt="Website público com informações da clínica, serviços e agendamento online para pacientes">Public-facing website with clinic information, services, and online appointment booking for patients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Key Features" data-pt="Recursos Principais">Key Features</h2>
+                <p data-en="Powerful tools designed for healthcare management" data-pt="Ferramentas poderosas projetadas para gestão em saúde">Powerful tools designed for healthcare management</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-number">01</div>
+                    <h3 data-en="Doctor Dashboard" data-pt="Painel do Médico">Doctor Dashboard</h3>
+                    <p data-en="Personalized dashboard for physicians to access their appointments, patient information, and daily schedule efficiently" data-pt="Painel personalizado para médicos acessarem suas consultas, informações de pacientes e agenda diária de forma eficiente">Personalized dashboard for physicians to access their appointments, patient information, and daily schedule efficiently</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-number">02</div>
+                    <h3 data-en="Patient Records" data-pt="Prontuários">Patient Records</h3>
+                    <p data-en="Secure digital patient records system with medical history, prescriptions, and treatment tracking" data-pt="Sistema seguro de prontuários digitais com histórico médico, prescrições e acompanhamento de tratamentos">Secure digital patient records system with medical history, prescriptions, and treatment tracking</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-number">03</div>
+                    <h3 data-en="Analytics & Reports" data-pt="Análises e Relatórios">Analytics & Reports</h3>
+                    <p data-en="Comprehensive reporting system with insights on clinic performance, patient flow, and revenue metrics" data-pt="Sistema abrangente de relatórios com insights sobre desempenho da clínica, fluxo de pacientes e métricas de receita">Comprehensive reporting system with insights on clinic performance, patient flow, and revenue metrics</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-number">04</div>
+                    <h3 data-en="Online Scheduling" data-pt="Agendamento Online">Online Scheduling</h3>
+                    <p data-en="Public booking system allowing patients to schedule appointments online with automatic confirmation and reminders" data-pt="Sistema público de agendamento permitindo pacientes marcarem consultas online com confirmação automática e lembretes">Public booking system allowing patients to schedule appointments online with automatic confirmation and reminders</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Technology Stack" data-pt="Stack Tecnológico">Technology Stack</h2>
+                <p data-en="Modern technologies ensuring scalability and performance" data-pt="Tecnologias modernas garantindo escalabilidade e performance">Modern technologies ensuring scalability and performance</p>
+            </div>
+            
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3 data-en="Frontend" data-pt="Frontend">Frontend</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-icon">🎨</span>
+                            <div class="tech-info">
+                                <h4>HTML5 & CSS3</h4>
+                                <p data-en="Semantic markup and modern styling" data-pt="Marcação semântica e estilização moderna">Semantic markup and modern styling</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">⚡</span>
+                            <div class="tech-info">
+                                <h4>JavaScript ES6+</h4>
+                                <p data-en="Interactive user interface and dynamic content" data-pt="Interface interativa e conteúdo dinâmico">Interactive user interface and dynamic content</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3 data-en="Backend" data-pt="Backend">Backend</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-icon">☕</span>
+                            <div class="tech-info">
+                                <h4>Java & Spring Boot</h4>
+                                <p data-en="Robust server-side application framework" data-pt="Framework robusto para aplicação servidor">Robust server-side application framework</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🗄️</span>
+                            <div class="tech-info">
+                                <h4>MySQL Database</h4>
+                                <p data-en="Reliable data storage and management" data-pt="Armazenamento e gestão confiável de dados">Reliable data storage and management</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Highlights -->
+    <section class="highlights-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Project Highlights" data-pt="Destaques do Projeto">Project Highlights</h2>
+            </div>
+            
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-metric">
+                        <span class="metric-number">100%</span>
+                        <span class="metric-label" data-en="Responsive Design" data-pt="Design Responsivo">Responsive Design</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-metric">
+                        <span class="metric-number">24/7</span>
+                        <span class="metric-label" data-en="System Availability" data-pt="Disponibilidade do Sistema">System Availability</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-metric">
+                        <span class="metric-number">LGPD</span>
+                        <span class="metric-label" data-en="Data Compliance" data-pt="Conformidade de Dados">Data Compliance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 data-en="Interested in Similar Solutions?" data-pt="Interessado em Soluções Similares?">Interested in Similar Solutions?</h2>
+                <p data-en="Let's discuss how we can create a custom healthcare management system for your organization." data-pt="Vamos discutir como podemos criar um sistema personalizado de gestão em saúde para sua organização.">Let's discuss how we can create a custom healthcare management system for your organization.</p>
+                
+                <div class="contact-buttons">
+                    <a href="mailto:amandaaraujoferreiraa@gmail.com" class="btn-primary">
+                        <span data-en="Get in Touch" data-pt="Entre em Contato">Get in Touch</span>
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2"/>
+                            <polygon points="22,2 15,22 11,13 2,9 22,2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                    <a href="../index.html#projects" class="btn-secondary">
+                        <span data-en="View More Projects" data-pt="Ver Mais Projetos">View More Projects</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p data-en="&copy; 2025 Amanda Ferreira. All rights reserved." data-pt="&copy; 2025 Amanda Ferreira. Todos os direitos reservados.">&copy; 2025 Amanda Ferreira. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html" data-en="Back to Portfolio" data-pt="Voltar ao Portfólio">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
