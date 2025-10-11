@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatura+ Project - Amanda Ferreira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <h1 data-en="Amanda Ferreira" data-pt="Amanda Ferreira">Amanda Ferreira</h1>
+                    </div>
+                    <div class="nav-right">
+                        <a href="../index.html" class="back-btn" data-en="← Back to Portfolio" data-pt="← Voltar ao Portfólio">← Back to Portfolio</a>
+                        <div class="language-toggle">
+                            <button class="lang-btn" id="languageBtn" onclick="toggleLanguage()">
+                                <span class="lang-flag">🇺🇸</span>
+                                <span class="lang-text">EN</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="project-badge">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                            <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+                            <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span data-en="Invoice Management System" data-pt="Sistema de Gestão de Faturas">Invoice Management System</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span data-en="Fatura+" data-pt="Fatura+">Fatura+</span>
+                    </h1>
+                    <p class="hero-description" data-en="A comprehensive invoice management platform designed to streamline billing processes for businesses of all sizes. Features automated invoicing, payment tracking, and detailed financial reporting." data-pt="Uma plataforma abrangente de gestão de faturas projetada para otimizar processos de faturamento para empresas de todos os tamanhos. Inclui faturamento automatizado, rastreamento de pagamentos e relatórios financeiros detalhados.">
+                        A comprehensive invoice management platform designed to streamline billing processes for businesses of all sizes. Features automated invoicing, payment tracking, and detailed financial reporting.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="scrollToSection('demo')">
+                            <span data-en="View Demo" data-pt="Ver Demo">View Demo</span>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="5,3 19,12 5,21 5,3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="btn-secondary" onclick="scrollToSection('features')">
+                            <span data-en="Explore Features" data-pt="Explorar Recursos">Explore Features</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="project-showcase">
+                        <div class="showcase-mockup">
+                            <div class="mockup-screen">
+                                <div class="mockup-header">
+                                    <div class="mockup-dots">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="mockup-title" data-en="Fatura+ Dashboard" data-pt="Painel Fatura+">Fatura+ Dashboard</div>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="invoice-preview">
+                                        <div class="invoice-header">
+                                            <h3 data-en="Invoice #001" data-pt="Fatura #001">Invoice #001</h3>
+                                            <span class="status paid" data-en="PAID" data-pt="PAGO">PAID</span>
+                                        </div>
+                                        <div class="invoice-details">
+                                            <div class="invoice-item">
+                                                <span data-en="Web Development" data-pt="Desenvolvimento Web">Web Development</span>
+                                                <span>R$ 2,500.00</span>
+                                            </div>
+                                            <div class="invoice-item">
+                                                <span data-en="UI/UX Design" data-pt="Design UI/UX">UI/UX Design</span>
+                                                <span>R$ 1,800.00</span>
+                                            </div>
+                                            <div class="invoice-total">
+                                                <span data-en="Total:" data-pt="Total:">Total:</span>
+                                                <span>R$ 4,300.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="tech-stack-section">
+        <div class="container">
+            <h2 class="section-title" data-en="Technologies Used" data-pt="Tecnologias Utilizadas">Technologies Used</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <span>React</span>
+                    </div>
+                    <span class="tech-name">React.js</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <span>Node</span>
+                    </div>
+                    <span class="tech-name">Node.js</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <span>SQL</span>
+                    </div>
+                    <span class="tech-name">PostgreSQL</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <span>API</span>
+                    </div>
+                    <span class="tech-name">REST API</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Key Features" data-pt="Principais Recursos">Key Features</h2>
+                <p class="section-subtitle" data-en="Powerful tools to manage your invoicing workflow efficiently" data-pt="Ferramentas poderosas para gerenciar seu fluxo de faturamento com eficiência">
+                    Powerful tools to manage your invoicing workflow efficiently
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 22V12" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 7L12 12L22 7" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Automated Invoicing" data-pt="Faturamento Automatizado">Automated Invoicing</h3>
+                    <p data-en="Generate invoices automatically based on contracts and recurring services. Set up templates and schedules for seamless billing." data-pt="Gere faturas automaticamente baseadas em contratos e serviços recorrentes. Configure modelos e cronogramas para faturamento contínuo.">
+                        Generate invoices automatically based on contracts and recurring services. Set up templates and schedules for seamless billing.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12C21 16.418 16.97 20 12 20S3 16.418 3 12S7.03 4 12 4S21 7.582 21 12Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Payment Tracking" data-pt="Rastreamento de Pagamentos">Payment Tracking</h3>
+                    <p data-en="Monitor payment status in real-time. Get notified about overdue invoices and track payment history with detailed analytics." data-pt="Monitore o status de pagamento em tempo real. Receba notificações sobre faturas vencidas e acompanhe o histórico de pagamentos com análises detalhadas.">
+                        Monitor payment status in real-time. Get notified about overdue invoices and track payment history with detailed analytics.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="18" y1="20" x2="18" y2="10" stroke="currentColor" stroke-width="2"/>
+                            <line x1="12" y1="20" x2="12" y2="4" stroke="currentColor" stroke-width="2"/>
+                            <line x1="6" y1="20" x2="6" y2="14" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Financial Reports" data-pt="Relatórios Financeiros">Financial Reports</h3>
+                    <p data-en="Comprehensive reporting dashboard with revenue analysis, payment trends, and business insights to help you make informed decisions." data-pt="Painel de relatórios abrangente com análise de receita, tendências de pagamento e insights empresariais para ajudá-lo a tomar decisões informadas.">
+                        Comprehensive reporting dashboard with revenue analysis, payment trends, and business insights to help you make informed decisions.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="16" r="1" stroke="currentColor" stroke-width="2"/>
+                            <path d="M7 11V7A5 5 0 0 1 17 7V11" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Secure & Compliant" data-pt="Seguro e Compatível">Secure & Compliant</h3>
+                    <p data-en="Bank-level security with encrypted data storage. Fully compliant with Brazilian tax regulations and international standards." data-pt="Segurança de nível bancário com armazenamento de dados criptografado. Totalmente compatível com regulamentações fiscais brasileiras e padrões internacionais.">
+                        Bank-level security with encrypted data storage. Fully compliant with Brazilian tax regulations and international standards.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21V19A2 2 0 0 0 15 17H9A2 2 0 0 0 7 19V21" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Client Management" data-pt="Gestão de Clientes">Client Management</h3>
+                    <p data-en="Organize client information, track project history, and maintain professional relationships with integrated CRM features." data-pt="Organize informações de clientes, acompanhe histórico de projetos e mantenha relacionamentos profissionais com recursos CRM integrados.">
+                        Organize client information, track project history, and maintain professional relationships with integrated CRM features.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M7 15L10 12L14 16L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Analytics Dashboard" data-pt="Painel de Análises">Analytics Dashboard</h3>
+                    <p data-en="Visual insights into your business performance with interactive charts, KPI tracking, and customizable reporting periods." data-pt="Insights visuais sobre o desempenho do seu negócio com gráficos interativos, acompanhamento de KPIs e períodos de relatório personalizáveis.">
+                        Visual insights into your business performance with interactive charts, KPI tracking, and customizable reporting periods.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Live Demo" data-pt="Demonstração ao Vivo">Live Demo</h2>
+                <p class="section-subtitle" data-en="Experience the Fatura+ interface and explore its powerful features" data-pt="Experimente a interface do Fatura+ e explore seus recursos poderosos">
+                    Experience the Fatura+ interface and explore its powerful features
+                </p>
+            </div>
+            
+            <div class="demo-container">
+                <div class="demo-tabs">
+                    <button class="demo-tab active" data-tab="dashboard" data-en="Dashboard" data-pt="Painel">Dashboard</button>
+                    <button class="demo-tab" data-tab="invoice" data-en="Create Invoice" data-pt="Criar Fatura">Create Invoice</button>
+                    <button class="demo-tab" data-tab="reports" data-en="Reports" data-pt="Relatórios">Reports</button>
+                </div>
+                
+                <div class="demo-content">
+                    <div class="demo-screen active" data-screen="dashboard">
+                        <div class="demo-interface">
+                            <div class="demo-sidebar">
+                                <div class="demo-nav-item active">
+                                    <span data-en="📊 Dashboard" data-pt="📊 Painel">📊 Dashboard</span>
+                                </div>
+                                <div class="demo-nav-item">
+                                    <span data-en="📄 Invoices" data-pt="📄 Faturas">📄 Invoices</span>
+                                </div>
+                                <div class="demo-nav-item">
+                                    <span data-en="👥 Clients" data-pt="👥 Clientes">👥 Clients</span>
+                                </div>
+                                <div class="demo-nav-item">
+                                    <span data-en="📈 Reports" data-pt="📈 Relatórios">📈 Reports</span>
+                                </div>
+                            </div>
+                            <div class="demo-main">
+                                <div class="demo-stats">
+                                    <div class="demo-stat">
+                                        <h4>R$ 45,280</h4>
+                                        <span data-en="Monthly Revenue" data-pt="Receita Mensal">Monthly Revenue</span>
+                                    </div>
+                                    <div class="demo-stat">
+                                        <h4>127</h4>
+                                        <span data-en="Invoices Sent" data-pt="Faturas Enviadas">Invoices Sent</span>
+                                    </div>
+                                    <div class="demo-stat">
+                                        <h4>98.5%</h4>
+                                        <span data-en="Payment Rate" data-pt="Taxa de Pagamento">Payment Rate</span>
+                                    </div>
+                                </div>
+                                <div class="demo-chart">
+                                    <div class="chart-placeholder">
+                                        <span data-en="📊 Revenue Chart" data-pt="📊 Gráfico de Receita">📊 Revenue Chart</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-screen" data-screen="invoice">
+                        <div class="demo-form">
+                            <h3 data-en="Create New Invoice" data-pt="Criar Nova Fatura">Create New Invoice</h3>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label data-en="Client" data-pt="Cliente">Client</label>
+                                    <select>
+                                        <option data-en="Select Client" data-pt="Selecionar Cliente">Select Client</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label data-en="Due Date" data-pt="Data de Vencimento">Due Date</label>
+                                    <input type="date" value="2025-11-11">
+                                </div>
+                            </div>
+                            <div class="invoice-items">
+                                <div class="item-row">
+                                    <span data-en="Service Description" data-pt="Descrição do Serviço">Service Description</span>
+                                    <span data-en="Amount" data-pt="Valor">Amount</span>
+                                </div>
+                                <div class="item-row">
+                                    <span data-en="Website Development" data-pt="Desenvolvimento de Website">Website Development</span>
+                                    <span>R$ 3,500.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-screen" data-screen="reports">
+                        <div class="reports-view">
+                            <h3 data-en="Financial Reports" data-pt="Relatórios Financeiros">Financial Reports</h3>
+                            <div class="report-cards">
+                                <div class="report-card">
+                                    <h4 data-en="Q4 2025 Summary" data-pt="Resumo Q4 2025">Q4 2025 Summary</h4>
+                                    <div class="report-stats">
+                                        <span data-en="Total Revenue: R$ 156,420" data-pt="Receita Total: R$ 156,420">Total Revenue: R$ 156,420</span>
+                                        <span data-en="Invoices: 387" data-pt="Faturas: 387">Invoices: 387</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Project Impact" data-pt="Impacto do Projeto">Project Impact</h2>
+                <p class="section-subtitle" data-en="Measurable results achieved through the Fatura+ implementation" data-pt="Resultados mensuráveis alcançados através da implementação do Fatura+">
+                    Measurable results achieved through the Fatura+ implementation
+                </p>
+            </div>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="result-number">
+                        <span class="counter" data-target="75">0</span>
+                        <span class="symbol">%</span>
+                    </div>
+                    <p data-en="Reduction in invoice processing time" data-pt="Redução no tempo de processamento de faturas">Reduction in invoice processing time</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-number">
+                        <span class="counter" data-target="98">0</span>
+                        <span class="symbol">%</span>
+                    </div>
+                    <p data-en="Payment collection rate improvement" data-pt="Melhoria na taxa de cobrança">Payment collection rate improvement</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-number">
+                        <span class="counter" data-target="60">0</span>
+                        <span class="symbol">%</span>
+                    </div>
+                    <p data-en="Faster client onboarding process" data-pt="Processo de integração de clientes mais rápido">Faster client onboarding process</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-number">
+                        <span class="counter" data-target="40">0</span>
+                        <span class="symbol">hrs</span>
+                    </div>
+                    <p data-en="Weekly time saved on admin tasks" data-pt="Tempo semanal economizado em tarefas administrativas">Weekly time saved on admin tasks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-en="Interested in Similar Solutions?" data-pt="Interessado em Soluções Similares?">Interested in Similar Solutions?</h2>
+                <p data-en="Let's discuss how I can help you build powerful business management tools for your organization." data-pt="Vamos discutir como posso ajudá-lo a construir ferramentas poderosas de gestão empresarial para sua organização.">
+                    Let's discuss how I can help you build powerful business management tools for your organization.
+                </p>
+                <div class="cta-buttons">
+                    <a href="../index.html#contact" class="btn-primary">
+                        <span data-en="Get In Touch" data-pt="Entre em Contato">Get In Touch</span>
+                    </a>
+                    <a href="../index.html#projects" class="btn-secondary">
+                        <span data-en="View More Projects" data-pt="Ver Mais Projetos">View More Projects</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p data-en="© 2025 Amanda Ferreira. All rights reserved." data-pt="© 2025 Amanda Ferreira. Todos os direitos reservados.">&copy; 2025 Amanda Ferreira. All rights reserved.</p>
+                <a href="../index.html" data-en="Back to Portfolio" data-pt="Voltar ao Portfólio">Back to Portfolio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
