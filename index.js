@@ -570,6 +570,24 @@ function toggleLanguage() {
         }
     });
     
+    // Traduzir placeholders dos inputs
+    const inputsWithPlaceholder = document.querySelectorAll('input[data-en-placeholder], textarea[data-en-placeholder]');
+    inputsWithPlaceholder.forEach(input => {
+        const placeholder = input.getAttribute(`data-${currentLanguage}-placeholder`);
+        if (placeholder) {
+            input.placeholder = placeholder;
+        }
+    });
+    
+    // Traduzir options do select
+    const selectOptions = document.querySelectorAll('option[data-en][data-pt]');
+    selectOptions.forEach(option => {
+        const newText = option.getAttribute(`data-${currentLanguage}`);
+        if (newText) {
+            option.textContent = newText;
+        }
+    });
+    
     // Traduzir elementos específicos sem data attributes
     translateSpecificElements();
     
