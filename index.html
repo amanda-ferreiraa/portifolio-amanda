@@ -15,12 +15,23 @@
                 <h1>Amanda Ferreira</h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Github</a></li>
-                <li><a href="#contacts">Contacts</a></li>
+                <li><a href="#home" data-en="Home" data-pt="Início">Home</a></li>
+                <li><a href="#about" data-en="About" data-pt="Sobre">About</a></li>
+                <li><a href="#projects" data-en="Projects" data-pt="Projetos">Projects</a></li>
+                <li><a href="#skills" data-en="Github" data-pt="Github">Github</a></li>
+                <li><a href="#contacts" data-en="Contacts" data-pt="Contato">Contacts</a></li>
             </ul>
+            
+            <!-- Language Toggle Button -->
+            <div class="language-toggle">
+                <button id="languageBtn" class="lang-btn" onclick="toggleLanguage()">
+                    <span class="lang-flag">🇺🇸</span>
+                    <span class="lang-text">EN</span>
+                    <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
         </nav>
     </header>
 
@@ -30,15 +41,15 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="greeting">
-                        <h2>Hello<span class="dot">.</span></h2>
+                        <h2 data-en="Hello" data-pt="Olá">Hello<span class="dot">.</span></h2>
                         <div class="accent-line"></div>
                     </div>
-                    <h1>I'm Amanda</h1>
-                    <h3 class="profession">Software Developer</h3>
+                    <h1 data-en="I'm Amanda" data-pt="Eu sou Amanda">I'm Amanda</h1>
+                    <h3 class="profession" data-en="Software Developer" data-pt="Desenvolvedora de Software">Software Developer</h3>
                     
                     <div class="hero-buttons">
-                        <button class="btn-primary">Got a project?</button>
-                        <button class="btn-secondary">My resume</button>
+                        <button class="btn-primary" data-en="Got a project?" data-pt="Tem um projeto?">Got a project?</button>
+                        <button class="btn-secondary" data-en="My resume" data-pt="Meu currículo">My resume</button>
                     </div>
                 </div>
                 

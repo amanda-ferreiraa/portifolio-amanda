@@ -382,4 +382,137 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Sistema de tradução
+let currentLanguage = 'en';
+
+// Traduções adicionais não cobertas pelos data attributes
+const translations = {
+    en: {
+        // Skills Bar
+        skillsTitle: 'Skills & Technologies',
+        // About Section
+        aboutTitle: 'About me',
+        aboutDescription: 'I started my software journey from photography. Through that, I learned to love the process of creating from scratch. Since then, this has led me to software development as it fulfills my love for learning and building things.',
+        completedProjects: 'Completed<br>Projects',
+        clientSatisfaction: 'Client<br>satisfaction',
+        yearsExperience: 'Years of<br>experience',
+        // Projects
+        projectsTitle: 'Projects',
+        projectsSubtitle: 'Explore my latest work and creative solutions',
+        // GitHub
+        githubTitle: 'GitHub Activity',
+        githubSubtitle: 'Code, commits, and continuous learning',
+        // Contact
+        contactTitle: 'Get In Touch',
+        contactSubtitle: 'Let\'s build something amazing together'
+    },
+    pt: {
+        // Skills Bar
+        skillsTitle: 'Habilidades & Tecnologias',
+        // About Section
+        aboutTitle: 'Sobre mim',
+        aboutDescription: 'Comecei minha jornada no desenvolvimento de software através da fotografia. Com isso, aprendi a amar o processo de criar do zero. Desde então, isso me levou ao desenvolvimento de software, pois satisfaz meu amor por aprender e construir coisas.',
+        completedProjects: 'Projetos<br>Concluídos',
+        clientSatisfaction: 'Satisfação do<br>Cliente',
+        yearsExperience: 'Anos de<br>Experiência',
+        // Projects
+        projectsTitle: 'Projetos',
+        projectsSubtitle: 'Explore meus trabalhos mais recentes e soluções criativas',
+        // GitHub
+        githubTitle: 'Atividade GitHub',
+        githubSubtitle: 'Código, commits e aprendizado contínuo',
+        // Contact
+        contactTitle: 'Entre em Contato',
+        contactSubtitle: 'Vamos construir algo incrível juntos'
+    }
+};
+
+function toggleLanguage() {
+    currentLanguage = currentLanguage === 'en' ? 'pt' : 'en';
+    
+    // Atualizar o botão de idioma
+    const langBtn = document.getElementById('languageBtn');
+    const langFlag = langBtn.querySelector('.lang-flag');
+    const langText = langBtn.querySelector('.lang-text');
+    
+    if (currentLanguage === 'pt') {
+        langFlag.textContent = '🇧🇷';
+        langText.textContent = 'PT';
+    } else {
+        langFlag.textContent = '🇺🇸';
+        langText.textContent = 'EN';
+    }
+    
+    // Traduzir elementos com data attributes
+    const elementsToTranslate = document.querySelectorAll('[data-en][data-pt]');
+    elementsToTranslate.forEach(element => {
+        const newText = element.getAttribute(`data-${currentLanguage}`);
+        if (newText) {
+            // Preservar HTML interno como <span class="dot">
+            if (element.innerHTML.includes('<span')) {
+                const spanContent = element.querySelector('span');
+                element.textContent = newText;
+                if (spanContent) {
+                    element.appendChild(spanContent);
+                }
+            } else {
+                element.textContent = newText;
+            }
+        }
+    });
+    
+    // Traduzir elementos específicos sem data attributes
+    translateSpecificElements();
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('preferredLanguage', currentLanguage);
+    
+    console.log(`Idioma alterado para: ${currentLanguage === 'en' ? 'Inglês' : 'Português'}`);
+}
+
+function translateSpecificElements() {
+    const lang = translations[currentLanguage];
+    
+    // Traduzir títulos de seções
+    const aboutTitle = document.querySelector('.about-title');
+    if (aboutTitle) aboutTitle.textContent = lang.aboutTitle;
+    
+    const aboutDesc = document.querySelector('.about-description');
+    if (aboutDesc) aboutDesc.textContent = lang.aboutDescription;
+    
+    const projectsTitle = document.querySelector('.projects-title');
+    if (projectsTitle) projectsTitle.textContent = lang.projectsTitle;
+    
+    const projectsSubtitle = document.querySelector('.projects-subtitle');
+    if (projectsSubtitle) projectsSubtitle.textContent = lang.projectsSubtitle;
+    
+    const githubTitle = document.querySelector('.github-title');
+    if (githubTitle) githubTitle.textContent = lang.githubTitle;
+    
+    const githubSubtitle = document.querySelector('.github-subtitle');
+    if (githubSubtitle) githubSubtitle.textContent = lang.githubSubtitle;
+    
+    const contactTitle = document.querySelector('.contact-title');
+    if (contactTitle) contactTitle.textContent = lang.contactTitle;
+    
+    const contactSubtitle = document.querySelector('.contact-subtitle');
+    if (contactSubtitle) contactSubtitle.textContent = lang.contactSubtitle;
+    
+    // Traduzir labels das estatísticas
+    const statLabels = document.querySelectorAll('.stat-label');
+    if (statLabels.length >= 3) {
+        statLabels[0].innerHTML = lang.completedProjects;
+        statLabels[1].innerHTML = lang.clientSatisfaction;
+        statLabels[2].innerHTML = lang.yearsExperience;
+    }
+}
+
+// Carregar idioma preferido do localStorage
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    if (savedLanguage && savedLanguage !== currentLanguage) {
+        toggleLanguage();
+    }
+});
+
 console.log('Portfólio da Amanda Ferreira carregado com sucesso!');
