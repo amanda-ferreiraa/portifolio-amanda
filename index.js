@@ -25,7 +25,7 @@ window.addEventListener('scroll', () => {
 
 // Sistema de alternância de imagens do perfil
 const profileImages = [
-    'img/Amanda.JPG',
+    'img/Amanda.jpeg',
     'img/Amanda1.jpeg',
     'img/Amanda2.jpeg'
 ];
