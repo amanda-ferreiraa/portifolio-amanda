@@ -334,10 +334,36 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     border-radius: 50%;
     position: relative;
     z-index: 2;
     display: block;
+    transition: all 0.3s ease;
+}
+
+/* Ajuste específico para Amanda1.jpeg */
+.profile-img[src*="Amanda1"] {
+    object-position: center 30%;
+}
+
+/* Fundo cinza específico para Amanda.jpeg */
+.profile-circle.amanda-bg::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background: linear-gradient(135deg, #8a8a8a, #b0b0b0);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.profile-img[src*="Amanda.jpeg"] {
+    position: relative;
+    z-index: 2;
+    opacity: 0.9;
 }
 
 /* Navigation Arrows */
