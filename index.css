@@ -243,7 +243,68 @@ body {
     border-radius: 50%;
 }
 
-/* Setas removidas */
+/* Navigation Arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(26, 29, 35, 0.8);
+    border: 2px solid #8B5CF6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8B5CF6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 0 20px rgba(139, 92, 246, 0.3),
+        0 0 40px rgba(139, 92, 246, 0.2),
+        inset 0 0 10px rgba(139, 92, 246, 0.1);
+    animation: arrowFloat 3s ease-in-out infinite alternate;
+}
+
+.nav-arrow:hover {
+    background-color: rgba(139, 92, 246, 0.2);
+    border-color: #A855F7;
+    color: #A855F7;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 
+        0 0 30px rgba(139, 92, 246, 0.5),
+        0 0 60px rgba(139, 92, 246, 0.3),
+        inset 0 0 15px rgba(139, 92, 246, 0.2);
+}
+
+.nav-arrow svg {
+    width: 24px;
+    height: 24px;
+}
+
+.arrow-left {
+    left: -40px;
+}
+
+.arrow-right {
+    right: -40px;
+}
+
+@keyframes arrowFloat {
+    from {
+        box-shadow: 
+            0 0 20px rgba(139, 92, 246, 0.3),
+            0 0 40px rgba(139, 92, 246, 0.2),
+            inset 0 0 10px rgba(139, 92, 246, 0.1);
+    }
+    to {
+        box-shadow: 
+            0 0 30px rgba(139, 92, 246, 0.4),
+            0 0 60px rgba(139, 92, 246, 0.3),
+            inset 0 0 15px rgba(139, 92, 246, 0.2);
+    }
+}
 
 /* Skills Bar */
 .skills-bar {
@@ -459,6 +520,10 @@ body {
     
     .nav-arrow {
         display: none;
+    }
+    
+    .image-container {
+        padding: 50px;
     }
 }
 
