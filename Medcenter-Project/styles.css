@@ -454,9 +454,33 @@ section {
 }
 
 .tech-icon {
-    font-size: 2rem;
     width: 50px;
-    text-align: center;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #8B5CF6;
+    transition: all 0.3s ease;
+}
+
+.tech-item:hover .tech-icon {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: rgba(139, 92, 246, 0.4);
+    transform: scale(1.1);
+}
+
+.tech-item:hover .tech-icon svg {
+    color: #A855F7;
+    transform: scale(1.1);
 }
 
 .tech-info h4 {
