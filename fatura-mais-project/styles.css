@@ -599,6 +599,118 @@ body {
     color: #dee2e6;
 }
 
+/* Demo Screenshot Styles */
+.demo-screenshot-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.demo-screenshot {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    min-height: 400px;
+    max-height: 600px;
+}
+
+.screenshot-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        to top, 
+        rgba(0, 0, 0, 0.9) 0%, 
+        rgba(0, 0, 0, 0.7) 50%, 
+        transparent 100%
+    );
+    color: white;
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.demo-screenshot-container:hover .screenshot-overlay {
+    transform: translateY(0);
+}
+
+.screenshot-overlay h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #8B5CF6;
+}
+
+.screenshot-overlay p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Responsive Design for Demo Section */
+@media (max-width: 768px) {
+    .demo-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .demo-tab {
+        min-width: calc(50% - 0.5rem);
+        margin: 0.25rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .demo-screenshot-container {
+        margin: 0 1rem;
+    }
+    
+    .demo-screenshot {
+        min-height: 300px;
+        max-height: 400px;
+    }
+    
+    .screenshot-overlay {
+        padding: 1.5rem;
+        position: static;
+        transform: none;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .screenshot-overlay h4 {
+        font-size: 1.1rem;
+    }
+    
+    .screenshot-overlay p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .demo-tab {
+        min-width: 100%;
+        margin: 0.25rem 0;
+    }
+    
+    .demo-screen {
+        padding: 1rem;
+    }
+    
+    .screenshot-overlay {
+        padding: 1rem;
+    }
+}
+
 .demo-form {
     background: #ffffff;
     border-radius: 12px;
