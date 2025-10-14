@@ -625,6 +625,10 @@ body {
     overflow: hidden;
 }
 
+.project-image:has(.project-img) {
+    background: none;
+}
+
 .project-placeholder {
     width: 80px;
     height: 80px;
@@ -636,6 +640,17 @@ body {
 .project-placeholder svg {
     width: 100%;
     height: 100%;
+}
+
+.project-placeholder .project-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    opacity: 1;
 }
 
 .project-overlay {
