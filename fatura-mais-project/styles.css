@@ -280,61 +280,36 @@ body {
     color: #495057;
 }
 
-.mockup-content {
-    padding: 1.5rem;
-}
-
-.invoice-preview {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 1.5rem;
-}
-
-.invoice-header {
+.logo-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #dee2e6;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
 }
 
-.invoice-header h3 {
-    margin: 0;
-    color: #333;
+.hero-logo {
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(139, 92, 246, 0.4));
+    animation: logoGlow 3s ease-in-out infinite alternate;
 }
 
-.status.paid {
-    background: #28a745;
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.75rem;
-    font-weight: 600;
+@keyframes logoGlow {
+    0% {
+        filter: drop-shadow(0 4px 8px rgba(139, 92, 246, 0.4));
+        transform: scale(1);
+    }
+    100% {
+        filter: drop-shadow(0 6px 12px rgba(139, 92, 246, 0.6));
+        transform: scale(1.05);
+    }
 }
 
-.invoice-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
 
-.invoice-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0;
-    color: #666;
-}
 
-.invoice-total {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.75rem 0;
-    margin-top: 0.5rem;
-    border-top: 1px solid #dee2e6;
-    font-weight: 600;
-    color: #333;
-}
+
 
 /* Sections */
 .section-title {
@@ -972,6 +947,14 @@ body {
     .back-btn {
         font-size: 0.9rem;
         padding: 0.4rem 0.8rem;
+    }
+    
+    .hero-logo {
+        max-width: 150px;
+    }
+    
+    .logo-container {
+        padding: 1.5rem;
     }
     
     .demo-interface {
